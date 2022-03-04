@@ -7,15 +7,11 @@
 extern "C" {
 #endif
 
-static logger *logger_instance = NULL;
-
-void logger_new() {
-	if(logger_instance == NULL) {
-		logger_instance = new logger();
-	}
+struct logger *new_logger(size_t loglevel) {
+	return new logger(loglevel);
 }
 
-void logger_print(const char *name) {
+void logger_print(struct logger *logger_instance, const char *name) {
 	logger_instance->print(name);
 }
 

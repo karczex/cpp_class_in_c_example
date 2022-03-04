@@ -2,8 +2,13 @@
 #define logger_H
 
 #include <iostream>
+#include <string>
 
-struct logger {
+class logger {
+private:
+	std::string level = "INFO: ";
+public:
+	logger(size_t loglevel);
 	void print(std::string message);
 };
 
